@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from flask_restful import Api, Resource, reqparse
-from ... import db
+from saakd_api import db
 from ..model.player import Player
 
 player_bp = Blueprint("players", __name__)
@@ -86,7 +86,5 @@ class playerListAPI(Resource):
         except Exception as e:
             db.session.rollback()
             return {"message": f"server error: {e}"}, 500
-
-
-player_api.add_resource(PlayerAPI, "/player")
+            
 player_api.add_resource(playerListAPI, "/playerList")

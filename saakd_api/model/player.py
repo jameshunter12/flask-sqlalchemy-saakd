@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, Boolean
-from .. import db
+from saakd_api import db
 
 
 class Player(db.Model):

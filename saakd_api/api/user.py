@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from flask_restful import Api, Resource, reqparse
-from .. import db
+from saakd_api import db
 from ..model.username import User
 
 user_bp = Blueprint("users", __name__)
@@ -83,6 +83,4 @@ class UserListAPI(Resource):
             db.session.rollback()
             return {"message": f"Server error: {e}"}, 500
 
-
-user_api.add_resource(UserAPI, "/login")
 user_api.add_resource(UserListAPI, "/userList")

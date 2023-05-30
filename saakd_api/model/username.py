@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String
-from .. import db
+from saakd_api import db
 
 
 class User(db.Model):
